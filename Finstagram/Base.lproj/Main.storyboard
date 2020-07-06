@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +74,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="l4x-Pn-Qqo"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Finstagram Feed" id="TRd-hY-vfu"/>
+                    <navigationItem key="navigationItem" title="Finstagram Feed" id="TRd-hY-vfu">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="TRe-ek-8yY">
+                            <connections>
+                                <action selector="didTapLogout:" destination="a1P-s6-VI7" id="zoa-Gv-p6C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1x-Hi-1eu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
