@@ -57,26 +57,46 @@
                     <connections>
                         <outlet property="passwordField" destination="GeH-vg-CHI" id="m1D-Gm-I9E"/>
                         <outlet property="usernameField" destination="pKB-6U-ZrT" id="AMd-eR-dWQ"/>
+                        <segue destination="qPd-59-iY9" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="xKJ-66-EGL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="135.9375"/>
         </scene>
-        <!--View Controller-->
+        <!--Finstagram Feed-->
         <scene sceneID="6lE-Th-0Yn">
             <objects>
-                <viewController id="a1P-s6-VI7" sceneMemberID="viewController">
+                <viewController id="a1P-s6-VI7" customClass="FeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BuO-cn-wUq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="l4x-Pn-Qqo"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Finstagram Feed" id="TRd-hY-vfu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1x-Hi-1eu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="136"/>
+            <point key="canvasLocation" x="1931.8840579710147" y="135.9375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Q7p-Hn-kjS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qPd-59-iY9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Ro-bs-waE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a1P-s6-VI7" kind="relationship" relationship="rootViewController" id="cZy-2I-Sa1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JvV-9X-xkX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.7391304347827" y="135.9375"/>
         </scene>
     </scenes>
 </document>
