@@ -21,13 +21,13 @@
     ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         
         configuration.applicationId = @"mercyInstagramId";
-        configuration.server = @"http://mercy-instagram.herokuapp.com/parse";
+        configuration.server = @"https://mercy-instagram.herokuapp.com/parse";
     }];
     
     [Parse initializeWithConfiguration:config];
     
     /* For testing dashboard
-    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
+    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore2"];
     gameScore[@"score"] = @1337;
     gameScore[@"playerName"] = @"Sean Plott";
     gameScore[@"cheatMode"] = @NO;
@@ -38,7 +38,7 @@
             NSLog(@"Error: %@", error.description);
         }
     }];
-     */
+    */
     
     return YES;
 }
