@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		D436948E24B3C63A00902846 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D436948D24B3C63A00902846 /* main.m */; };
 		D436949824B3C63B00902846 /* FinstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D436949724B3C63B00902846 /* FinstagramTests.m */; };
 		D43694A324B3C63B00902846 /* FinstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43694A224B3C63B00902846 /* FinstagramUITests.m */; };
+		D43694B524B3D8A500902846 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43694B424B3D8A500902846 /* LoginViewController.m */; };
+		D43694B824B3D91100902846 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43694B724B3D91100902846 /* FeedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,10 @@
 		D436949E24B3C63B00902846 /* FinstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43694A224B3C63B00902846 /* FinstagramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinstagramUITests.m; sourceTree = "<group>"; };
 		D43694A424B3C63B00902846 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D43694B324B3D8A500902846 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D43694B424B3D8A500902846 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D43694B624B3D91100902846 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		D43694B724B3D91100902846 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		FA2427E7EA48EC2F9FE4C375 /* Pods-Finstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finstagram.release.xcconfig"; path = "Target Support Files/Pods-Finstagram/Pods-Finstagram.release.xcconfig"; sourceTree = "<group>"; };
 		FA6657BAEA5C6FFBD8EE7FFC /* Pods_FinstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,7 +112,6 @@
 				8C787998A416B8B1085EEC59 /* Pods-FinstagramTests.debug.xcconfig */,
 				50534254544826D82388B798 /* Pods-FinstagramTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -145,6 +150,9 @@
 		D436947A24B3C63A00902846 /* Finstagram */ = {
 			isa = PBXGroup;
 			children = (
+				D43694B224B3D89200902846 /* Models */,
+				D43694B124B3D88D00902846 /* Views */,
+				D43694B024B3D87500902846 /* View Controllers */,
 				D436947B24B3C63A00902846 /* AppDelegate.h */,
 				D436947C24B3C63A00902846 /* AppDelegate.m */,
 				D436947E24B3C63A00902846 /* SceneDelegate.h */,
@@ -176,6 +184,31 @@
 				D43694A424B3C63B00902846 /* Info.plist */,
 			);
 			path = FinstagramUITests;
+			sourceTree = "<group>";
+		};
+		D43694B024B3D87500902846 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D43694B324B3D8A500902846 /* LoginViewController.h */,
+				D43694B424B3D8A500902846 /* LoginViewController.m */,
+				D43694B624B3D91100902846 /* FeedViewController.h */,
+				D43694B724B3D91100902846 /* FeedViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D43694B124B3D88D00902846 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D43694B224B3D89200902846 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +453,8 @@
 				D436947D24B3C63A00902846 /* AppDelegate.m in Sources */,
 				D436948E24B3C63A00902846 /* main.m in Sources */,
 				D436948024B3C63A00902846 /* SceneDelegate.m in Sources */,
+				D43694B824B3D91100902846 /* FeedViewController.m in Sources */,
+				D43694B524B3D8A500902846 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
