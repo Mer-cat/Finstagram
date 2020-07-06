@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D436947D24B3C63A00902846 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D436947C24B3C63A00902846 /* AppDelegate.m */; };
+		D436948024B3C63A00902846 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D436947F24B3C63A00902846 /* SceneDelegate.m */; };
+		D436948324B3C63A00902846 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D436948224B3C63A00902846 /* ViewController.m */; };
+		D436948624B3C63A00902846 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D436948424B3C63A00902846 /* Main.storyboard */; };
+		D436948824B3C63A00902846 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D436948724B3C63A00902846 /* Assets.xcassets */; };
+		D436948B24B3C63A00902846 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D436948924B3C63A00902846 /* LaunchScreen.storyboard */; };
+		D436948E24B3C63A00902846 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D436948D24B3C63A00902846 /* main.m */; };
+		D436949824B3C63B00902846 /* FinstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D436949724B3C63B00902846 /* FinstagramTests.m */; };
+		D43694A324B3C63B00902846 /* FinstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D43694A224B3C63B00902846 /* FinstagramUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D436949424B3C63B00902846 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D436947024B3C63A00902846 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D436947724B3C63A00902846;
+			remoteInfo = Finstagram;
+		};
+		D436949F24B3C63B00902846 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D436947024B3C63A00902846 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D436947724B3C63A00902846;
+			remoteInfo = Finstagram;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D436947824B3C63A00902846 /* Finstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D436947B24B3C63A00902846 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D436947C24B3C63A00902846 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D436947E24B3C63A00902846 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		D436947F24B3C63A00902846 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		D436948124B3C63A00902846 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D436948224B3C63A00902846 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D436948524B3C63A00902846 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D436948724B3C63A00902846 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D436948A24B3C63A00902846 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D436948C24B3C63A00902846 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D436948D24B3C63A00902846 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D436949324B3C63B00902846 /* FinstagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinstagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D436949724B3C63B00902846 /* FinstagramTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinstagramTests.m; sourceTree = "<group>"; };
+		D436949924B3C63B00902846 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D436949E24B3C63B00902846 /* FinstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D43694A224B3C63B00902846 /* FinstagramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinstagramUITests.m; sourceTree = "<group>"; };
+		D43694A424B3C63B00902846 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D436947524B3C63A00902846 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D436949024B3C63B00902846 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D436949B24B3C63B00902846 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D436946F24B3C63A00902846 = {
+			isa = PBXGroup;
+			children = (
+				D436947A24B3C63A00902846 /* Finstagram */,
+				D436949624B3C63B00902846 /* FinstagramTests */,
+				D43694A124B3C63B00902846 /* FinstagramUITests */,
+				D436947924B3C63A00902846 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D436947924B3C63A00902846 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D436947824B3C63A00902846 /* Finstagram.app */,
+				D436949324B3C63B00902846 /* FinstagramTests.xctest */,
+				D436949E24B3C63B00902846 /* FinstagramUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D436947A24B3C63A00902846 /* Finstagram */ = {
+			isa = PBXGroup;
+			children = (
+				D436947B24B3C63A00902846 /* AppDelegate.h */,
+				D436947C24B3C63A00902846 /* AppDelegate.m */,
+				D436947E24B3C63A00902846 /* SceneDelegate.h */,
+				D436947F24B3C63A00902846 /* SceneDelegate.m */,
+				D436948124B3C63A00902846 /* ViewController.h */,
+				D436948224B3C63A00902846 /* ViewController.m */,
+				D436948424B3C63A00902846 /* Main.storyboard */,
+				D436948724B3C63A00902846 /* Assets.xcassets */,
+				D436948924B3C63A00902846 /* LaunchScreen.storyboard */,
+				D436948C24B3C63A00902846 /* Info.plist */,
+				D436948D24B3C63A00902846 /* main.m */,
+			);
+			path = Finstagram;
+			sourceTree = "<group>";
+		};
+		D436949624B3C63B00902846 /* FinstagramTests */ = {
+			isa = PBXGroup;
+			children = (
+				D436949724B3C63B00902846 /* FinstagramTests.m */,
+				D436949924B3C63B00902846 /* Info.plist */,
+			);
+			path = FinstagramTests;
+			sourceTree = "<group>";
+		};
+		D43694A124B3C63B00902846 /* FinstagramUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D43694A224B3C63B00902846 /* FinstagramUITests.m */,
+				D43694A424B3C63B00902846 /* Info.plist */,
+			);
+			path = FinstagramUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D436947724B3C63A00902846 /* Finstagram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D43694A724B3C63B00902846 /* Build configuration list for PBXNativeTarget "Finstagram" */;
+			buildPhases = (
+				D436947424B3C63A00902846 /* Sources */,
+				D436947524B3C63A00902846 /* Frameworks */,
+				D436947624B3C63A00902846 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Finstagram;
+			productName = Finstagram;
+			productReference = D436947824B3C63A00902846 /* Finstagram.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D436949224B3C63B00902846 /* FinstagramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D43694AA24B3C63B00902846 /* Build configuration list for PBXNativeTarget "FinstagramTests" */;
+			buildPhases = (
+				D436948F24B3C63B00902846 /* Sources */,
+				D436949024B3C63B00902846 /* Frameworks */,
+				D436949124B3C63B00902846 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D436949524B3C63B00902846 /* PBXTargetDependency */,
+			);
+			name = FinstagramTests;
+			productName = FinstagramTests;
+			productReference = D436949324B3C63B00902846 /* FinstagramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D436949D24B3C63B00902846 /* FinstagramUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D43694AD24B3C63B00902846 /* Build configuration list for PBXNativeTarget "FinstagramUITests" */;
+			buildPhases = (
+				D436949A24B3C63B00902846 /* Sources */,
+				D436949B24B3C63B00902846 /* Frameworks */,
+				D436949C24B3C63B00902846 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D43694A024B3C63B00902846 /* PBXTargetDependency */,
+			);
+			name = FinstagramUITests;
+			productName = FinstagramUITests;
+			productReference = D436949E24B3C63B00902846 /* FinstagramUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D436947024B3C63A00902846 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = mercycat;
+				TargetAttributes = {
+					D436947724B3C63A00902846 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					D436949224B3C63B00902846 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = D436947724B3C63A00902846;
+					};
+					D436949D24B3C63B00902846 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = D436947724B3C63A00902846;
+					};
+				};
+			};
+			buildConfigurationList = D436947324B3C63A00902846 /* Build configuration list for PBXProject "Finstagram" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D436946F24B3C63A00902846;
+			productRefGroup = D436947924B3C63A00902846 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D436947724B3C63A00902846 /* Finstagram */,
+				D436949224B3C63B00902846 /* FinstagramTests */,
+				D436949D24B3C63B00902846 /* FinstagramUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D436947624B3C63A00902846 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D436948B24B3C63A00902846 /* LaunchScreen.storyboard in Resources */,
+				D436948824B3C63A00902846 /* Assets.xcassets in Resources */,
+				D436948624B3C63A00902846 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D436949124B3C63B00902846 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D436949C24B3C63B00902846 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D436947424B3C63A00902846 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D436948324B3C63A00902846 /* ViewController.m in Sources */,
+				D436947D24B3C63A00902846 /* AppDelegate.m in Sources */,
+				D436948E24B3C63A00902846 /* main.m in Sources */,
+				D436948024B3C63A00902846 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D436948F24B3C63B00902846 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D436949824B3C63B00902846 /* FinstagramTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D436949A24B3C63B00902846 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D43694A324B3C63B00902846 /* FinstagramUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D436949524B3C63B00902846 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D436947724B3C63A00902846 /* Finstagram */;
+			targetProxy = D436949424B3C63B00902846 /* PBXContainerItemProxy */;
+		};
+		D43694A024B3C63B00902846 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D436947724B3C63A00902846 /* Finstagram */;
+			targetProxy = D436949F24B3C63B00902846 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D436948424B3C63A00902846 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D436948524B3C63A00902846 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D436948924B3C63A00902846 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D436948A24B3C63A00902846 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D43694A524B3C63B00902846 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D43694A624B3C63B00902846 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D43694A824B3C63B00902846 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7ZHC9LK6JK;
+				INFOPLIST_FILE = Finstagram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercycat.Finstagram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D43694A924B3C63B00902846 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7ZHC9LK6JK;
+				INFOPLIST_FILE = Finstagram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercycat.Finstagram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D43694AB24B3C63B00902846 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7ZHC9LK6JK;
+				INFOPLIST_FILE = FinstagramTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercycat.FinstagramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Finstagram.app/Finstagram";
+			};
+			name = Debug;
+		};
+		D43694AC24B3C63B00902846 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7ZHC9LK6JK;
+				INFOPLIST_FILE = FinstagramTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercycat.FinstagramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Finstagram.app/Finstagram";
+			};
+			name = Release;
+		};
+		D43694AE24B3C63B00902846 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7ZHC9LK6JK;
+				INFOPLIST_FILE = FinstagramUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercycat.FinstagramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Finstagram;
+			};
+			name = Debug;
+		};
+		D43694AF24B3C63B00902846 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7ZHC9LK6JK;
+				INFOPLIST_FILE = FinstagramUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mercycat.FinstagramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Finstagram;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D436947324B3C63A00902846 /* Build configuration list for PBXProject "Finstagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D43694A524B3C63B00902846 /* Debug */,
+				D43694A624B3C63B00902846 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D43694A724B3C63B00902846 /* Build configuration list for PBXNativeTarget "Finstagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D43694A824B3C63B00902846 /* Debug */,
+				D43694A924B3C63B00902846 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D43694AA24B3C63B00902846 /* Build configuration list for PBXNativeTarget "FinstagramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D43694AB24B3C63B00902846 /* Debug */,
+				D43694AC24B3C63B00902846 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D43694AD24B3C63B00902846 /* Build configuration list for PBXNativeTarget "FinstagramUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D43694AE24B3C63B00902846 /* Debug */,
+				D43694AF24B3C63B00902846 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D436947024B3C63A00902846 /* Project object */;
+}
