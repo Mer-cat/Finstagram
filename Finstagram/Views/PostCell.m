@@ -7,6 +7,7 @@
 //
 
 #import "PostCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation PostCell
 
@@ -19,6 +20,14 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)refreshPost {
+    // Set labels and images
+    self.captionLabel = self.post[@"caption"];
+    NSURL *imageURL = self.post[@"imageURL"];
+    UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
+    [self.postImage setImageWithURL:imageURL placeholderImage:placeholderImage];
 }
 
 @end
