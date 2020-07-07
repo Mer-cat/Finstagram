@@ -12,7 +12,7 @@
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
 #import "PostCell.h"
-#import "UIImageView+AFNetworking.h"
+#import "Post.h"
 
 @interface FeedViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -27,7 +27,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    [self reloadData];
+    [self reloadPosts];
     
     // TODO: Add refresh control
 }
@@ -48,7 +48,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
-    PFObject *post = self.postArray[indexPath.row];
+    Post *post = self.postArray[indexPath.row];
     cell.post = post;
 
     [cell refreshPost];
@@ -60,10 +60,15 @@
     return self.postArray.count;
 }
 
-- (void)reloadData {
-    PFQuery *query = [PFQuery queryWithClassName:@"post"];
+/**
+ * Fetch posts from the Parse database
+ */
+- (void)reloadPosts {
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     //[query includeKey:@"user"];
-    //[query orderByDescending:@"createdAt"];
+    //[query whereKey:@"likesCount" greaterThan:@100];
+    query.limit = 20;
+    [query orderByDescending:@"createdAt"];
 
     // Fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
