@@ -42,6 +42,9 @@ Please list two areas of the assignment you'd like to **discuss further with you
 1.
 2.
 
+## Wireframe Sketch
+<img src="https://i.imgur.com/gg0pNU8.png" width=600>
+
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
