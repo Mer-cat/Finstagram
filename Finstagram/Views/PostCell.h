@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "Post.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PostCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
-@property (nonatomic, strong) PFObject *post;
+@property (nonatomic, strong) Post *post;
 
 - (void)refreshPost;
 

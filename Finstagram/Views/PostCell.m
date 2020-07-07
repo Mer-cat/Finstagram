@@ -25,9 +25,9 @@
 - (void)refreshPost {
     // Set labels and images
     self.captionLabel = self.post[@"caption"];
-    NSURL *imageURL = self.post[@"imageURL"];
-    UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
-    [self.postImage setImageWithURL:imageURL placeholderImage:placeholderImage];
+    //NSURL *imageURL = self.post[@"imageURL"];
+    //UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
+    [self.postImage setImage:(UIImage *) self.post.image]; //:imageURL placeholderImage:placeholderImage];
 }
 
 @end
