@@ -7,8 +7,11 @@
 //
 
 #import "ComposeViewController.h"
+#import "Post.h"
 
 @interface ComposeViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *captionField;
+@property (weak, nonatomic) IBOutlet UIImageView *postImage;
 
 @end
 
@@ -18,6 +21,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+- (IBAction)onTapImage:(id)sender {
+    // Present image picker/camera
+    [self initUIImagePickerController];
+}
+
+/**
+ * Make a new post with an image and caption
+ */
+- (IBAction)didPressShare:(id)sender {
+    [Post postUserImage:self.postImage.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"Successfully posted photo!");
+            // Manually return to the home screen
+        } else {
+            NSLog(@"Failed to post photo: %@", error.localizedDescription);
+        }
+    }];
+}
+
+- (IBAction)didPressCancel:(id)sender {
+    // Manually return to the home screen
+}
+
 
 - (void)initUIImagePickerController {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
@@ -34,13 +61,17 @@
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
+/**
+ * Delegate method for UIImagePickerController
+ */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
-    // Do something with the images (based on your use case)
+    // Assign image chosen to appear in the image view
+    self.postImage.image = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -62,7 +93,6 @@
     
     return newImage;
 }
-
 
 /*
 #pragma mark - Navigation
