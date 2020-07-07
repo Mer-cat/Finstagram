@@ -11,8 +11,12 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
+#import "PostCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface FeedViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *postArray;
 
 @end
 
@@ -20,7 +24,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    [self reloadData];
+    
+    // TODO: Add refresh control
 }
 
 - (IBAction)didTapLogout:(id)sender {
@@ -34,6 +43,36 @@
     // Clear out the current user
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
+    }];
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    PFObject *post = self.postArray[indexPath.row];
+    cell.post = post;
+
+    [cell refreshPost];
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.postArray.count;
+}
+
+- (void)reloadData {
+    PFQuery *query = [PFQuery queryWithClassName:@"post"];
+    //[query includeKey:@"user"];
+    //[query orderByDescending:@"createdAt"];
+
+    // Fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.postArray = posts;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
 }
 
