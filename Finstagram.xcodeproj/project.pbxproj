@@ -23,6 +23,7 @@
 		D43694FC24B5021300902846 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43694FB24B5021300902846 /* ComposeViewController.m */; };
 		D43694FF24B502F200902846 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D43694FE24B502F200902846 /* PostCell.m */; };
 		D436950224B514D200902846 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D436950124B514D200902846 /* Post.m */; };
+		D436950724B65AB600902846 /* PostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D436950624B65AB600902846 /* PostDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		D43694FE24B502F200902846 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		D436950024B514D200902846 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		D436950124B514D200902846 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		D436950524B65AB600902846 /* PostDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostDetailsViewController.h; sourceTree = "<group>"; };
+		D436950624B65AB600902846 /* PostDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostDetailsViewController.m; sourceTree = "<group>"; };
 		FA2427E7EA48EC2F9FE4C375 /* Pods-Finstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finstagram.release.xcconfig"; path = "Target Support Files/Pods-Finstagram/Pods-Finstagram.release.xcconfig"; sourceTree = "<group>"; };
 		FA6657BAEA5C6FFBD8EE7FFC /* Pods_FinstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -199,6 +202,8 @@
 				D43694B724B3D91100902846 /* FeedViewController.m */,
 				D43694FA24B5021300902846 /* ComposeViewController.h */,
 				D43694FB24B5021300902846 /* ComposeViewController.m */,
+				D436950524B65AB600902846 /* PostDetailsViewController.h */,
+				D436950624B65AB600902846 /* PostDetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 				D43694B824B3D91100902846 /* FeedViewController.m in Sources */,
 				D43694B524B3D8A500902846 /* LoginViewController.m in Sources */,
 				D436950224B514D200902846 /* Post.m in Sources */,
+				D436950724B65AB600902846 /* PostDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
