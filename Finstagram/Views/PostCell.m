@@ -14,18 +14,16 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 - (void)refreshPost {
     // Set labels
-    self.captionLabel = self.post[@"caption"];
+    self.captionLabel.text = self.post[@"caption"];
 
     // Set image
     UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
@@ -37,6 +35,7 @@
             [self.postImage setImage: [UIImage imageWithData:data]];
         }
     }];
+     
 }
 
 @end
