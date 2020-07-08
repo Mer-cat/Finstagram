@@ -27,7 +27,7 @@
     self.usernameLabel.text = self.post.author.username;
     // Format date to show time since posting
     NSDate *timeCreated = self.post.createdAt;
-    self.timeAgoLabel.text = [NSString stringWithFormat:@"Posted %@ ago", timeCreated.shortTimeAgoSinceNow];
+    self.timeAgoLabel.text = [NSString stringWithFormat:@"%@ ago", timeCreated.shortTimeAgoSinceNow];
 
     // Set image
     UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
