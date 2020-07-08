@@ -8,6 +8,7 @@
 
 #import "PostCell.h"
 #import <Parse/Parse.h>
+#import "DateTools.h"
 
 @implementation PostCell
 
@@ -23,6 +24,10 @@
 - (void)refreshPost {
     // Set labels
     self.captionLabel.text = self.post.caption;
+    self.usernameLabel.text = self.post.author.username;
+    // Format date to show time since posting
+    NSDate *timeCreated = self.post.createdAt;
+    self.timeAgoLabel.text = [NSString stringWithFormat:@"Posted %@ ago", timeCreated.shortTimeAgoSinceNow];
 
     // Set image
     UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
