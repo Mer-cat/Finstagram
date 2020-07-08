@@ -9,6 +9,9 @@
 #import "ComposeViewController.h"
 #import "Post.h"
 
+/**
+ * View controller for posting new images with captions
+ */
 @interface ComposeViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *captionField;
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
@@ -19,7 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (IBAction)onTapImage:(id)sender {
@@ -48,7 +50,9 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
-
+/**
+ * Create new image picker to allow user to select an image from their camera or photo library
+ */
 - (void)initUIImagePickerController {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;

@@ -9,6 +9,9 @@
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
 
+/**
+ * View controller for initial login screen, where users can register or log in
+ */
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
@@ -18,8 +21,7 @@
 @implementation LoginViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
+    [super viewDidLoad];    
 }
 
 - (IBAction)didTapSignUp:(id)sender {
@@ -64,7 +66,6 @@
     
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
-            
             NSLog(@"User log in failed: %@", error.localizedDescription);
             [self createAlertWithMessage:error.localizedDescription withTitle:@"Error logging in"];
         } else {
@@ -74,6 +75,9 @@
     }];
 }
 
+/**
+ * Create new alert on the screen with specified message and title
+ */
 - (void)createAlertWithMessage:(NSString *) alertMessage withTitle:(NSString *)title {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
                                                                    message:alertMessage
