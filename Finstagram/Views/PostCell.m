@@ -7,7 +7,6 @@
 //
 
 #import "PostCell.h"
-#import "UIImageView+AFNetworking.h"
 #import <Parse/Parse.h>
 
 @implementation PostCell
@@ -23,7 +22,7 @@
 
 - (void)refreshPost {
     // Set labels
-    self.captionLabel.text = self.post[@"caption"];
+    self.captionLabel.text = self.post.caption;
 
     // Set image
     UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
