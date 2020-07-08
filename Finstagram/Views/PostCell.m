@@ -8,6 +8,7 @@
 
 #import "PostCell.h"
 #import "UIImageView+AFNetworking.h"
+#import <Parse/Parse.h>
 
 @implementation PostCell
 
@@ -23,11 +24,19 @@
 }
 
 - (void)refreshPost {
-    // Set labels and images
+    // Set labels
     self.captionLabel = self.post[@"caption"];
-    //NSURL *imageURL = self.post[@"imageURL"];
-    //UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
-    [self.postImage setImage:(UIImage *) self.post.image]; //:imageURL placeholderImage:placeholderImage];
+
+    // Set image
+    UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
+    [self.post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error getting image: %@", error.localizedDescription);
+            [self.postImage setImage: placeholderImage];
+        } else {
+            [self.postImage setImage: [UIImage imageWithData:data]];
+        }
+    }];
 }
 
 @end
