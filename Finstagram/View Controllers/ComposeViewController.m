@@ -34,7 +34,9 @@
     [Post postUserImage:self.postImage.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"Successfully posted photo!");
+            
             // Manually return to the home screen
+            [self dismissViewControllerAnimated:true completion:nil];
         } else {
             NSLog(@"Failed to post photo: %@", error.localizedDescription);
         }
@@ -43,6 +45,7 @@
 
 - (IBAction)didPressCancel:(id)sender {
     // Manually return to the home screen
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 
@@ -78,7 +81,7 @@
 }
 
 /**
- * Resizes images since Parse can only store 10MB of photos
+ * Resizes images since Parse only allows 10MB uploads for a photo
  */
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
     UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
