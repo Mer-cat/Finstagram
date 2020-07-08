@@ -17,6 +17,7 @@
 @interface FeedViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *postArray;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -30,6 +31,14 @@
     [self reloadPosts];
     
     // TODO: Add refresh control
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl setTintColor:[UIColor redColor]];
+    
+    // Refreshes the tweets each time the user pulls down on screen
+    [self.refreshControl addTarget:self action:@selector(reloadPosts) forControlEvents:UIControlEventValueChanged];
+    
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
 }
 
 - (IBAction)didTapLogout:(id)sender {
@@ -64,20 +73,20 @@
  * Fetch posts from the Parse database
  */
 - (void)reloadPosts {
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    //[query includeKey:@"user"];
-    //[query whereKey:@"likesCount" greaterThan:@100];
-    query.limit = 20;
-    [query orderByDescending:@"createdAt"];
-
+    PFQuery *postQuery = [PFQuery queryWithClassName:@"Post"];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+    
     // Fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> *posts, NSError *error) {
         if (posts != nil) {
             self.postArray = posts;
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
+        [self.refreshControl endRefreshing];
     }];
 }
 
