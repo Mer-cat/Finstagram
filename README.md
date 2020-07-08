@@ -14,7 +14,7 @@ The following **required** functionality is completed:
 - [X] User can take a photo, add a caption, and post it to "Instagram"
 - [X] User can view the last 20 posts submitted to "Instagram"
 - [X] User can pull to refresh the last 20 posts submitted to "Instagram"
-- [ ] User can tap a post to view post details, including timestamp and caption.
+- [X] User can tap a post to view post details, including timestamp and caption.
 
 The following **optional** features are implemented:
 
@@ -54,8 +54,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 - [Parse](https://github.com/parse-community/Parse-SDK-iOS-OSX) - backend database
+- [DateTools](https://github.com/MatthewYork/DateTools) - helps with time formatting
 
 
 ## Notes
