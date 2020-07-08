@@ -7,12 +7,13 @@
 //
 
 #import "PostDetailsViewController.h"
+#import "DateTools.h"
 
 @interface PostDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeAgoLabel;
 
 @end
 
@@ -38,8 +39,8 @@
     // Set labels
     self.usernameLabel.text = self.post.author.username;
     self.captionLabel.text = self.post.caption;
-    self.timestampLabel.text = [NSString stringWithFormat:@"%@", self.post.createdAt];
-}
+    NSDate *timeCreated = self.post.createdAt;
+    self.timeAgoLabel.text = [NSString stringWithFormat:@"Posted %@ ago", timeCreated.shortTimeAgoSinceNow];
 
 /*
 #pragma mark - Navigation
