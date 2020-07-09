@@ -7,8 +7,15 @@
 //
 
 #import "ProfileViewController.h"
+#import <Parse/Parse.h>
+#import "PostCollectionCell.h"
 
-@interface ProfileViewController ()
+@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) NSArray *postArray;
+@property (nonatomic, strong) PFUser *user;
 
 @end
 
@@ -16,9 +23,55 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    
+    self.user = [PFUser currentUser];
+    
+    [self reloadPosts];
 }
 
+- (void)reloadProfile {
+    self.usernameLabel.text = self.user[@"username"];
+    // Set profile image
+    // TODO: Allow user to choose profile image
+    UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
+    [self.profileImage setImage: placeholderImage];
+}
+
+/**
+ * Fetch posts that have been posted by the current user from Parse
+ */
+- (void)reloadPosts {
+    PFQuery *postQuery = [PFQuery queryWithClassName:@"Post"];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    //postQuery.limit = 20;
+    
+    // Fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> *posts, NSError *error) {
+        if (posts != nil) {
+            self.postArray = posts;
+            [self.collectionView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        // [self.refreshControl endRefreshing];
+    }];
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.postArray.count;
+}
+
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
+    PostCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
+    
+    // Associates cell and post
+    cell.post = self.postArray[indexPath.item];
+    return cell;
+}
 /*
 #pragma mark - Navigation
 
