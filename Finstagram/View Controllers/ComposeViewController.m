@@ -8,6 +8,7 @@
 
 #import "ComposeViewController.h"
 #import "Post.h"
+#import "MBProgressHUD.h"
 
 /**
  * View controller for posting new images with captions
@@ -33,6 +34,11 @@
  * Make a new post with an image and caption
  */
 - (IBAction)didPressShare:(id)sender {
+    
+    // Show activity indicator while waiting for post to upload
+    MBProgressHUD *activityIndicator = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    activityIndicator.label.text = NSLocalizedString(@"Loading...", @"HUD loading title");
+    
     [Post postUserImage:self.postImage.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"Successfully posted photo!");
@@ -42,6 +48,7 @@
         } else {
             NSLog(@"Failed to post photo: %@", error.localizedDescription);
         }
+        [activityIndicator hideAnimated:YES];
     }];
 }
 
