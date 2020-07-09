@@ -28,6 +28,7 @@
     
     self.user = [PFUser currentUser];
     
+    [self reloadProfile];
     [self reloadPosts];
 }
 
@@ -70,6 +71,8 @@
     
     // Associates cell and post
     cell.post = self.postArray[indexPath.item];
+    [cell refreshPost];
+    
     return cell;
 }
 /*
