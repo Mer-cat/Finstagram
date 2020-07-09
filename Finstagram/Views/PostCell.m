@@ -31,10 +31,10 @@
 
     // Set image
     UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
+    [self.postImage setImage: placeholderImage];
     [self.post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error getting image: %@", error.localizedDescription);
-            [self.postImage setImage: placeholderImage];
         } else {
             [self.postImage setImage: [UIImage imageWithData:data]];
         }
