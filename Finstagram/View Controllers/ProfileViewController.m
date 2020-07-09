@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import <Parse/Parse.h>
 #import "PostCollectionCell.h"
+#import "PostDetailsViewController.h"
 
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -56,6 +57,7 @@
     PFQuery *postQuery = [PFQuery queryWithClassName:@"Post"];
     [postQuery whereKey:@"author" equalTo:self.user];
     [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
     postQuery.limit = 20;
     
     // Fetch data asynchronously
@@ -84,14 +86,17 @@
     
     return cell;
 }
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"postDetailsFromCollectionSegue"]) {
+        PostDetailsViewController *detailsViewController = [segue destinationViewController];
+        PostCollectionCell *tappedCell = sender;
+        Post *specificPost = tappedCell.post;
+        detailsViewController.post = specificPost;
+    }
 }
-*/
+
 
 @end
