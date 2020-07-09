@@ -41,7 +41,7 @@
     self.captionLabel.text = self.post.caption;
     NSDate *timeCreated = self.post.createdAt;
     self.timeAgoLabel.text = [NSString stringWithFormat:@"Posted %@ ago", timeCreated.shortTimeAgoSinceNow];
-
+}
 /*
 #pragma mark - Navigation
 
