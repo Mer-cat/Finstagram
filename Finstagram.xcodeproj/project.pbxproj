@@ -25,6 +25,7 @@
 		D436950224B514D200902846 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D436950124B514D200902846 /* Post.m */; };
 		D436950724B65AB600902846 /* PostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D436950624B65AB600902846 /* PostDetailsViewController.m */; };
 		D436950A24B7BF9900902846 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D436950924B7BF9900902846 /* ProfileViewController.m */; };
+		D436950D24B7C31B00902846 /* PostCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D436950C24B7C31B00902846 /* PostCollectionCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		D436950624B65AB600902846 /* PostDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostDetailsViewController.m; sourceTree = "<group>"; };
 		D436950824B7BF9900902846 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		D436950924B7BF9900902846 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		D436950B24B7C31B00902846 /* PostCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionCell.h; sourceTree = "<group>"; };
+		D436950C24B7C31B00902846 /* PostCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionCell.m; sourceTree = "<group>"; };
 		FA2427E7EA48EC2F9FE4C375 /* Pods-Finstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finstagram.release.xcconfig"; path = "Target Support Files/Pods-Finstagram/Pods-Finstagram.release.xcconfig"; sourceTree = "<group>"; };
 		FA6657BAEA5C6FFBD8EE7FFC /* Pods_FinstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -218,6 +221,8 @@
 			children = (
 				D43694FD24B502F200902846 /* PostCell.h */,
 				D43694FE24B502F200902846 /* PostCell.m */,
+				D436950B24B7C31B00902846 /* PostCollectionCell.h */,
+				D436950C24B7C31B00902846 /* PostCollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 			files = (
 				D436947D24B3C63A00902846 /* AppDelegate.m in Sources */,
 				D436948E24B3C63A00902846 /* main.m in Sources */,
+				D436950D24B7C31B00902846 /* PostCollectionCell.m in Sources */,
 				D436948024B3C63A00902846 /* SceneDelegate.m in Sources */,
 				D43694FC24B5021300902846 /* ComposeViewController.m in Sources */,
 				D436950A24B7BF9900902846 /* ProfileViewController.m in Sources */,
