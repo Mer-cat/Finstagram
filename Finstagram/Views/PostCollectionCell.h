@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) Post *post;
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
 
+- (void)refreshPost;
+
 @end
 
 NS_ASSUME_NONNULL_END
