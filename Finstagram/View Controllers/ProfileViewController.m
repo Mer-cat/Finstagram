@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *postArray;
 @property (nonatomic, strong) PFUser *user;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -30,6 +31,14 @@
     
     [self reloadProfile];
     [self reloadPosts];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl setTintColor:[UIColor redColor]];
+    
+    // Refreshes posts when user pulls down
+    [self.refreshControl addTarget:self action:@selector(reloadPosts) forControlEvents:UIControlEventValueChanged];
+    [self.collectionView insertSubview:self.refreshControl atIndex:0];
+    self.collectionView.alwaysBounceVertical = YES;
 }
 
 - (void)reloadProfile {
@@ -45,9 +54,9 @@
  */
 - (void)reloadPosts {
     PFQuery *postQuery = [PFQuery queryWithClassName:@"Post"];
+    [postQuery whereKey:@"author" equalTo:self.user];
     [postQuery orderByDescending:@"createdAt"];
-    [postQuery includeKey:@"author"];
-    //postQuery.limit = 20;
+    postQuery.limit = 20;
     
     // Fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> *posts, NSError *error) {
@@ -57,7 +66,7 @@
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
-        // [self.refreshControl endRefreshing];
+        [self.refreshControl endRefreshing];
     }];
 }
 
