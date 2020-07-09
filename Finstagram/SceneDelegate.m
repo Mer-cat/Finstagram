@@ -26,8 +26,8 @@
         NSLog(@"Welcome back %@ 😀", user.username);
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *feedNavigationController = [storyboard instantiateViewControllerWithIdentifier:@"FeedNavigationController"];
-        self.window.rootViewController = feedNavigationController;
+        UIViewController *feedTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"FeedTabBarController"];
+        self.window.rootViewController = feedTabBarController;
     }
 }
 
