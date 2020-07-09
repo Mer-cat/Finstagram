@@ -8,6 +8,7 @@ target 'Finstagram' do
   # Pods for Finstagram
   pod 'Parse'
   pod 'DateTools'
+  pod 'MBProgressHUD'
 
   target 'FinstagramTests' do
     inherit! :search_paths
