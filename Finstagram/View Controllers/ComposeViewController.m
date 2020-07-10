@@ -86,7 +86,7 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     // Assign image chosen to appear in the image view
-    self.postImage.image = [self resizeImage:editedImage withSize:CGSizeMake(400, 400)];
+    self.postImage.image = [ComposeViewController resizeImage:editedImage withSize:CGSizeMake(400, 400)];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -96,8 +96,9 @@
 
 /**
  * Resizes images since Parse only allows 10MB uploads for a photo
+ * Note: this class could be better housed in a helper class, but it is currently the only helper method
  */
-- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
++ (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
     UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     
     resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
