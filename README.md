@@ -49,12 +49,15 @@ Please list two areas of the assignment you'd like to **discuss further with you
 Here's a walkthrough of implemented user stories:
 
 Main features:
+
 <img src='http://g.recordit.co/WuySRVPegW.gif' title='Main features Walkthrough' width='' alt='Video Walkthrough' />
 
 Selecting a profile photo:
+
 <img src='http://g.recordit.co/62sMi9jhEm.gif' title='Profile Image Walkthrough' width='' alt='Video Walkthrough' />
 
 Autolayout:
+
 <img src='http://g.recordit.co/a6Qdy39kwn.gif' title='Autolayout Walkthrough' width='' alt='Video Walkthrough' />
 GIF created with [Recordit](https://recordit.co/).
 
