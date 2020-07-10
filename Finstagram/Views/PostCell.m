@@ -10,16 +10,19 @@
 #import <Parse/Parse.h>
 #import "DateTools.h"
 
+/**
+ * Custom table view cell for a post
+ */
+@interface PostCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *postImage;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeAgoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
+
+@end
 @implementation PostCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-}
+#pragma mark - Init
 
 - (void)refreshPost {
     // Set labels
@@ -28,7 +31,7 @@
     // Format date to show time since posting
     NSDate *timeCreated = self.post.createdAt;
     self.timeAgoLabel.text = [NSString stringWithFormat:@"%@ ago", timeCreated.shortTimeAgoSinceNow];
-
+    
     // Set image
     UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
     [self.postImage setImage: placeholderImage];
@@ -39,7 +42,6 @@
             [self.postImage setImage: [UIImage imageWithData:data]];
         }
     }];
-     
 }
 
 @end
