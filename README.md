@@ -63,7 +63,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Autolayout can be quite challenging at times. Also, it was interesting to learn that tap gesture recognizers don't function well in repeatable contexts such as table view cells.
 
 ## License
 
