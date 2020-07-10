@@ -88,8 +88,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     Post *post = self.postArray[indexPath.row];
-    cell.post = post;
-    [cell refreshPost];
+    [cell refreshPost:post];
     return cell;
 }
 
@@ -106,7 +105,8 @@
     if([segue.identifier isEqualToString:@"postDetailsSegue"]) {
         PostDetailsViewController *detailsViewController = [segue destinationViewController];
         PostCell *tappedCell = sender;
-        Post *specificPost = tappedCell.post;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *specificPost = self.postArray[indexPath.row];
         detailsViewController.post = specificPost;
     }
 }

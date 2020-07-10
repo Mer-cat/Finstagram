@@ -9,17 +9,22 @@
 #import "PostCollectionCell.h"
 
 /**
- * Custom collection view cell for a post
- */
+* Custom collection view cell for a post
+*/
+@interface PostCollectionCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *postImage;
+
+@end
+
 @implementation PostCollectionCell
 
 #pragma mark - Init
 
-- (void)refreshPost {
+- (void)refreshPost:(Post*) post {
     // Set image
     UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
     [self.postImage setImage: placeholderImage];
-    [self.post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+    [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error getting image: %@", error.localizedDescription);
         } else {

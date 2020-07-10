@@ -14,9 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PostCell : UITableViewCell
 
-@property (nonatomic, strong) Post *post;
-
-- (void)refreshPost;
+- (void)refreshPost:(Post*) post;
 
 @end
 

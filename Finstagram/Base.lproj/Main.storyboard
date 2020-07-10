@@ -125,7 +125,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="captionLabel" destination="k7r-An-JNc" id="8Go-XW-SqS"/>
+                                            <outlet property="captionLabel" destination="k7r-An-JNc" id="Smk-Zc-UWI"/>
                                             <outlet property="postImage" destination="Niv-hw-Hs1" id="OkR-pf-Mpm"/>
                                             <outlet property="timeAgoLabel" destination="6j0-VJ-sQi" id="Fhd-Vx-M1V"/>
                                             <outlet property="usernameLabel" destination="Em1-KQ-sKL" id="UEH-kq-vNV"/>
@@ -360,7 +360,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="200" height="205"/>
                                         <connections>
-                                            <outlet property="postImage" destination="Fg5-9B-ZaL" id="Tna-ca-H8r"/>
+                                            <outlet property="postImage" destination="Fg5-9B-ZaL" id="cBy-FN-Mxr"/>
                                             <segue destination="guY-14-NiB" kind="show" identifier="postDetailsFromCollectionSegue" id="6FS-K4-NR7"/>
                                         </connections>
                                     </collectionViewCell>
@@ -420,7 +420,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gmx-o0-P4h"/>
+        <segue reference="6FS-K4-NR7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="96"/>

@@ -12,10 +12,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PostCollectionCell : UICollectionViewCell
-@property (nonatomic, strong) Post *post;
-@property (weak, nonatomic) IBOutlet UIImageView *postImage;
 
-- (void)refreshPost;
+- (void)refreshPost:(Post*) post;
 
 @end
 

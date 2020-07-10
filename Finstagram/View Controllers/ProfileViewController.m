@@ -89,8 +89,8 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     PostCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
-    cell.post = self.postArray[indexPath.item];
-    [cell refreshPost];
+    Post *post = self.postArray[indexPath.item];
+    [cell refreshPost:post];
     return cell;
 }
 
@@ -103,7 +103,8 @@
     if([segue.identifier isEqualToString:@"postDetailsFromCollectionSegue"]) {
         PostDetailsViewController *detailsViewController = [segue destinationViewController];
         PostCollectionCell *tappedCell = sender;
-        Post *specificPost = tappedCell.post;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
+        Post *specificPost = self.postArray[indexPath.item];
         detailsViewController.post = specificPost;
     }
 }

@@ -20,22 +20,23 @@
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 
 @end
+
 @implementation PostCell
 
 #pragma mark - Init
 
-- (void)refreshPost {
+- (void)refreshPost:(Post *)post {
     // Set labels
-    self.captionLabel.text = self.post.caption;
-    self.usernameLabel.text = self.post.author.username;
+    self.captionLabel.text = post.caption;
+    self.usernameLabel.text = post.author.username;
     // Format date to show time since posting
-    NSDate *timeCreated = self.post.createdAt;
+    NSDate *timeCreated = post.createdAt;
     self.timeAgoLabel.text = [NSString stringWithFormat:@"%@ ago", timeCreated.shortTimeAgoSinceNow];
     
     // Set image
     UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
     [self.postImage setImage: placeholderImage];
-    [self.post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+    [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error getting image: %@", error.localizedDescription);
         } else {
