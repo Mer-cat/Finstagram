@@ -52,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="0.93889584429999995" blue="0.93483363109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -75,7 +75,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yM1-WJ-ACu">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="1" green="0.84383614880000002" blue="0.92643978029999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="484" id="hgh-1D-gg8" customClass="PostCell">
                                         <rect key="frame" x="0.0" y="28" width="414" height="484"/>
@@ -136,6 +136,7 @@
                                                 <constraint firstItem="Niv-hw-Hs1" firstAttribute="top" secondItem="Ijl-2w-hst" secondAttribute="top" id="ucj-4s-VoE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.93889584425928496" blue="0.93483363112411566" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="captionLabel" destination="k7r-An-JNc" id="Smk-Zc-UWI"/>
                                             <outlet property="postImage" destination="Niv-hw-Hs1" id="OkR-pf-Mpm"/>
@@ -210,7 +211,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="0.93889584429999995" blue="0.93483363109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="QWU-oK-Vah" firstAttribute="bottom" secondItem="Fz5-zm-Nug" secondAttribute="bottom" constant="245.5" id="2F8-F7-GCF"/>
                             <constraint firstItem="Fz5-zm-Nug" firstAttribute="top" secondItem="bVh-iu-UTu" secondAttribute="bottom" constant="32.5" id="64w-QY-jS7"/>
@@ -272,7 +273,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="0.93889584429999995" blue="0.93483363109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Me0-Qe-xeK" firstAttribute="leading" secondItem="ns0-3J-YBh" secondAttribute="leading" constant="8" id="1zN-E9-C9i"/>
                             <constraint firstItem="e26-L8-B0G" firstAttribute="top" secondItem="ns0-3J-YBh" secondAttribute="top" constant="15" id="6ui-gU-AIS"/>
@@ -349,7 +350,7 @@
             </objects>
             <point key="canvasLocation" x="2300" y="-1291"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Your Profile-->
         <scene sceneID="VWV-jn-Efp">
             <objects>
                 <viewController id="Wbt-8b-VNb" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -376,7 +377,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c1f-gj-dvB">
                                 <rect key="frame" x="0.0" y="298" width="414" height="598"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="1" green="0.93889584429999995" blue="0.93483363109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TUZ-sk-5BE">
                                     <size key="itemSize" width="200" height="205"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -402,6 +403,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="Fg5-9B-ZaL" secondAttribute="trailing" id="ieF-IL-vdb"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.93889584429999995" blue="0.93483363109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <size key="customSize" width="200" height="205"/>
                                         <connections>
                                             <outlet property="postImage" destination="Fg5-9B-ZaL" id="cBy-FN-Mxr"/>
@@ -411,7 +413,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="0.93889584429999995" blue="0.93483363109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="jDt-N1-64v" firstAttribute="top" secondItem="J0P-xA-4nO" secondAttribute="top" constant="9" id="ALF-f5-gdW"/>
                             <constraint firstAttribute="bottom" secondItem="c1f-gj-dvB" secondAttribute="bottom" id="Fu4-LY-CzF"/>
@@ -426,7 +428,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J0P-xA-4nO"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LVJ-Ot-i8x"/>
+                    <navigationItem key="navigationItem" title="Your Profile" id="LVJ-Ot-i8x"/>
                     <connections>
                         <outlet property="collectionView" destination="c1f-gj-dvB" id="cnK-yy-r3I"/>
                         <outlet property="profileImage" destination="jDt-N1-64v" id="gXD-Qi-wju"/>
@@ -481,7 +483,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gmx-o0-P4h"/>
+        <segue reference="6FS-K4-NR7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="96"/>
