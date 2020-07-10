@@ -35,8 +35,9 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [X] Timestamps are displayed as time ago using the DateTools pod
-- [X] The main views have autolayout implemented.
+- [X] Implement a character limit on the caption and show characters remaining while user is typing.
+- [X] Display timestamps as time ago using the DateTools pod
+- [X] Implement autolayout on the main views of the app.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
