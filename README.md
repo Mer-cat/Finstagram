@@ -48,8 +48,14 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+Main features:
+<img src='http://g.recordit.co/WuySRVPegW.gif' title='Main features Walkthrough' width='' alt='Video Walkthrough' />
 
+Selecting a profile photo:
+<img src='http://g.recordit.co/62sMi9jhEm.gif' title='Profile Image Walkthrough' width='' alt='Video Walkthrough' />
+
+Autolayout:
+<img src='http://g.recordit.co/a6Qdy39kwn.gif' title='Autolayout Walkthrough' width='' alt='Video Walkthrough' />
 GIF created with [Recordit](https://recordit.co/).
 
 ## Credits
@@ -59,7 +65,6 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 - [Parse](https://github.com/parse-community/Parse-SDK-iOS-OSX) - backend database
 - [DateTools](https://github.com/MatthewYork/DateTools) - time formatting
 - [MBProgressHUD](https://github.com/matej/MBProgressHUD) - HUD for progress when loading data
-
 
 ## Notes
 
