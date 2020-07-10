@@ -8,6 +8,9 @@
 
 #import "Post.h"
 
+/**
+ * Post object stored in Parse
+ */
 @implementation Post
 
 @dynamic postID;
@@ -17,6 +20,8 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
+
+#pragma mark - Parse object init
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -33,6 +38,8 @@
     
     [newPost saveInBackgroundWithBlock: completion];
 }
+
+#pragma mark - Image to file helper
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
     

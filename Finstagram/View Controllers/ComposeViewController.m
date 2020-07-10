@@ -11,7 +11,7 @@
 #import "MBProgressHUD.h"
 
 /**
- * View controller for posting new images with captions
+ * View controller for creating new posts, consisting of images with captions
  */
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *captionField;
@@ -21,9 +21,7 @@
 
 @implementation ComposeViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
+#pragma mark - Actions
 
 - (IBAction)onTapImage:(id)sender {
     // Present image picker/camera
@@ -57,6 +55,8 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
+#pragma mark - UIImagePickerController init
+
 /**
  * Create new image picker to allow user to select an image from their camera or photo library
  */
@@ -75,6 +75,8 @@
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
+#pragma mark - UIImagePickerControllerDelegate
+
 /**
  * Delegate method for UIImagePickerController
  */
@@ -89,6 +91,8 @@
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - Image upload helper
 
 /**
  * Resizes images since Parse only allows 10MB uploads for a photo
@@ -106,15 +110,5 @@
     
     return newImage;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

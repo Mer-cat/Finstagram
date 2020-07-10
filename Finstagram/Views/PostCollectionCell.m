@@ -8,7 +8,12 @@
 
 #import "PostCollectionCell.h"
 
+/**
+ * Custom collection view cell for a post
+ */
 @implementation PostCollectionCell
+
+#pragma mark - Init
 
 - (void)refreshPost {
     // Set image

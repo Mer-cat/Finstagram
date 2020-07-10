@@ -23,6 +23,8 @@
 
 @implementation ProfileViewController
 
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.collectionView.delegate = self;
@@ -33,14 +35,17 @@
     [self reloadProfile];
     [self reloadPosts];
     
+    // Add refresh control for collection view
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl setTintColor:[UIColor redColor]];
-    
-    // Refreshes posts when user pulls down
     [self.refreshControl addTarget:self action:@selector(reloadPosts) forControlEvents:UIControlEventValueChanged];
     [self.collectionView insertSubview:self.refreshControl atIndex:0];
+    
+    // Allows refreshing even when collection view is not full
     self.collectionView.alwaysBounceVertical = YES;
 }
+
+#pragma mark - Init
 
 - (void)reloadProfile {
     self.usernameLabel.text = self.user[@"username"];
@@ -72,23 +77,28 @@
     }];
 }
 
+#pragma mark - UICollectionViewDataSource
+
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.postArray.count;
 }
 
+/**
+ * Associate each collection view cell with a particular post
+ */
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     PostCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
-    
-    // Associates cell and post
     cell.post = self.postArray[indexPath.item];
     [cell refreshPost];
-    
     return cell;
 }
 
 #pragma mark - Navigation
 
+/**
+ * Pass post corresponding to tapped cell to the details view controller
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"postDetailsFromCollectionSegue"]) {
         PostDetailsViewController *detailsViewController = [segue destinationViewController];
@@ -97,6 +107,5 @@
         detailsViewController.post = specificPost;
     }
 }
-
 
 @end

@@ -20,9 +20,7 @@
 
 @implementation LoginViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];    
-}
+#pragma mark - Actions
 
 - (IBAction)didTapSignUp:(id)sender {
     [self registerUser];
@@ -31,6 +29,8 @@
 - (IBAction)didTapLogin:(id)sender {
     [self loginUser];
 }
+
+#pragma mark - Parse network calls
 
 - (void)registerUser {
     // Initialize a user object
@@ -75,6 +75,8 @@
     }];
 }
 
+#pragma mark - UIAlertController helper
+
 /**
  * Create new alert on the screen with specified message and title
  */
@@ -83,20 +85,11 @@
                                                                    message:alertMessage
                                                             preferredStyle:(UIAlertControllerStyleAlert)];
     
-    // Create a cancel action
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:^(UIAlertAction * _Nonnull action) {
-        // Handle cancel response here. Doing nothing will dismiss the view.
-    }];
-    // Add the cancel action to the alertController
-    [alert addAction:cancelAction];
-    
     // Create an OK action
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                        style:UIAlertActionStyleDefault
                                                      handler:^(UIAlertAction * _Nonnull action) {
-        // Handle response here.
+        // Dismiss the view.
     }];
     // Add the OK action to the alert controller
     [alert addAction:okAction];
@@ -105,15 +98,5 @@
         // Optional code for what happens after the alert controller has finished presenting
     }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
