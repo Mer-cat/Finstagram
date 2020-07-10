@@ -10,8 +10,10 @@
 #import <Parse/Parse.h>
 #import "PostCollectionCell.h"
 #import "PostDetailsViewController.h"
+#import "ComposeViewController.h"
+#import "Post.h"
 
-@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -49,10 +51,35 @@
 
 - (void)reloadProfile {
     self.usernameLabel.text = self.user[@"username"];
-    // Set profile image
-    // TODO: Allow user to choose profile image
+    
+    // Set image either to place holder or what user selected
     UIImage *placeholderImage = [UIImage imageNamed:@"image_placeholder"];
     [self.profileImage setImage: placeholderImage];
+    [self.user[@"profileImage"] getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error getting image: %@", error.localizedDescription);
+        } else {
+            [self.profileImage setImage: [UIImage imageWithData:data]];
+        }
+    }];
+}
+
+/**
+ * Create new image picker to allow user to select profile image from their camera or photo library
+ */
+- (void)initUIImagePickerController {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        NSLog(@"Camera not available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
 /**
@@ -77,6 +104,12 @@
     }];
 }
 
+#pragma mark - Actions
+
+- (IBAction)onTapProfileImage:(id)sender {
+    [self initUIImagePickerController];
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -92,6 +125,33 @@
     Post *post = self.postArray[indexPath.item];
     [cell refreshPost:post];
     return cell;
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+/**
+ * Delegate method for UIImagePickerController
+ */
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    
+    // Assign image chosen to appear in the image view
+    UIImage *resizedImage = [ComposeViewController resizeImage:originalImage withSize:CGSizeMake(400, 400)];
+    self.profileImage.image = resizedImage;
+    PFFileObject *imageFile = [Post getPFFileFromImage:resizedImage];
+    self.user[@"profileImage"] = imageFile;
+    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"The profile image was saved!");
+        } else {
+            NSLog(@"Problem saving profile image: %@",error.localizedDescription);
+        }
+    }];
+    
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Navigation
