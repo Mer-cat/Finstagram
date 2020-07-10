@@ -245,19 +245,30 @@
                                     <outletCollection property="gestureRecognizers" destination="xsq-Jq-2Lw" appends="YES" id="vq2-4k-kio"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2sx-pM-LPY">
-                                <rect key="frame" x="195" y="103" width="208" height="34"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e26-L8-B0G">
+                                <rect key="frame" x="195" y="103" width="206" height="33"/>
+                                <color key="backgroundColor" red="1" green="0.84383614880000002" blue="0.92643978029999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0/2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bt4-am-vPE">
+                                <rect key="frame" x="344" y="144" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2sx-pM-LPY" firstAttribute="top" secondItem="Me0-Qe-xeK" secondAttribute="top" id="0kW-Cq-kr7"/>
                             <constraint firstItem="Me0-Qe-xeK" firstAttribute="leading" secondItem="ns0-3J-YBh" secondAttribute="leading" constant="8" id="1zN-E9-C9i"/>
+                            <constraint firstItem="e26-L8-B0G" firstAttribute="top" secondItem="ns0-3J-YBh" secondAttribute="top" constant="15" id="6ui-gU-AIS"/>
                             <constraint firstItem="Me0-Qe-xeK" firstAttribute="top" secondItem="ns0-3J-YBh" secondAttribute="top" constant="15" id="UOM-MB-KNL"/>
-                            <constraint firstItem="ns0-3J-YBh" firstAttribute="trailing" secondItem="2sx-pM-LPY" secondAttribute="trailing" constant="11" id="doG-AE-Uql"/>
-                            <constraint firstItem="2sx-pM-LPY" firstAttribute="leading" secondItem="Me0-Qe-xeK" secondAttribute="trailing" constant="8" id="o0b-WB-0ms"/>
+                            <constraint firstItem="bt4-am-vPE" firstAttribute="trailing" secondItem="e26-L8-B0G" secondAttribute="trailing" id="bMS-fz-zM0"/>
+                            <constraint firstItem="bt4-am-vPE" firstAttribute="top" secondItem="e26-L8-B0G" secondAttribute="bottom" constant="8" id="lHj-3y-ekY"/>
+                            <constraint firstItem="ns0-3J-YBh" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Me0-Qe-xeK" secondAttribute="bottom" constant="20" id="lkI-Cd-zHY"/>
+                            <constraint firstItem="ns0-3J-YBh" firstAttribute="trailing" secondItem="e26-L8-B0G" secondAttribute="trailing" constant="13" id="vSs-uv-nsd"/>
+                            <constraint firstItem="e26-L8-B0G" firstAttribute="leading" secondItem="Me0-Qe-xeK" secondAttribute="trailing" constant="8" id="zHC-vz-Ryo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ns0-3J-YBh"/>
                     </view>
@@ -274,7 +285,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="captionField" destination="2sx-pM-LPY" id="Dc9-46-PqR"/>
+                        <outlet property="captionField" destination="e26-L8-B0G" id="NiE-wj-WZs"/>
+                        <outlet property="charactersRemainingLabel" destination="bt4-am-vPE" id="ckp-oG-3TY"/>
                         <outlet property="postImage" destination="Me0-Qe-xeK" id="n6q-wL-1uR"/>
                     </connections>
                 </viewController>
@@ -285,7 +297,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2507" y="240"/>
+            <point key="canvasLocation" x="2505.7971014492755" y="239.73214285714283"/>
         </scene>
         <!--Home Feed-->
         <scene sceneID="Q7p-Hn-kjS">

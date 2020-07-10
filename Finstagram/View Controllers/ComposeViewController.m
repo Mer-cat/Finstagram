@@ -13,13 +13,24 @@
 /**
  * View controller for creating new posts, consisting of images with captions
  */
-@interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *captionField;
+@interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextView *captionField;
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
+@property (nonatomic) NSInteger characterLimit;
+@property (weak, nonatomic) IBOutlet UILabel *charactersRemainingLabel;
 
 @end
 
 @implementation ComposeViewController
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.captionField.delegate = self;
+    self.characterLimit = 2000;
+    self.charactersRemainingLabel.text = [NSString stringWithFormat:@"%ld", self.characterLimit];
+}
 
 #pragma mark - Actions
 
@@ -90,6 +101,28 @@
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UITextFieldDelegate
+
+/**
+ * Character limit method that accounts for copy/paste operations
+ */
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)string {
+    if (range.length + range.location > textView.text.length) {
+        return NO;
+    }
+    
+    NSUInteger newLength = [textView.text length] + [string length] - range.length;
+    BOOL shouldChange = newLength <= self.characterLimit;
+    
+    // Update characters remaining
+    if (shouldChange) {
+    NSInteger charactersRemaining = self.characterLimit - newLength;
+    self.charactersRemainingLabel.text = [NSString stringWithFormat:@"%ld/%ld", charactersRemaining, self.characterLimit];
+    }
+    
+    return shouldChange;
 }
 
 #pragma mark - Image upload helper
